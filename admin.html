@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GhostAlgo • CFSS Admin</title><link rel="stylesheet" href="style.css"></head>
+<body class="admin-page">
+<header><div class="nav"><a class="brand" href="index.html">🚗 <b>CFSS 2023</b><small>GHOSTALGO ADMIN</small></a><nav><a href="index.html">Public Site</a></nav></div></header>
+<main class="admin-main">
+<section id="login-panel" class="panel auth-panel"><span class="eyebrow">PRIVATE AREA</span><h1>👻 GhostAlgo Admin</h1><p>Sign in to manage the public CFSS 2023 catalogue.</p><form id="login-form"><label>Email<input id="email" type="email" autocomplete="username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button class="primary" type="submit">Sign in</button><div id="login-message" class="message"></div></form></section>
+<section id="admin-panel" class="panel" hidden>
+<div class="admin-head"><div><span class="eyebrow">CATALOGUE CONTROL</span><h1>Manage cars</h1><p id="whoami"></p></div><button id="signout" class="ghost">Sign out</button></div>
+<div id="admin-message" class="message"></div>
+<div class="admin-actions"><button id="new-car" class="primary">＋ New car</button><button id="import-cars" class="ghost">Import starter catalogue</button><button id="refresh-cars" class="ghost">↻ Refresh</button></div>
+<div class="admin-grid"><div><h2>Cars</h2><div id="admin-list" class="admin-list"></div></div>
+<form id="car-form" class="editor"><input id="car-id" type="hidden"><h2 id="form-title">New car</h2><label>Car name<input id="car-name" required maxlength="100"></label><label>Category<select id="car-category"><option>Base Game</option><option>Free Update</option><option>Pickup & SUV DLC</option><option>Japanese Pack DLC</option><option>Super Sports DLC</option></select></label><div class="two"><label>Buy price<input id="car-buy" type="number" min="0" step="1" placeholder="Optional"></label><label>Sell price<input id="car-sell" type="number" min="0" step="1" placeholder="Optional"></label></div><label>Notes<textarea id="car-notes" rows="4" maxlength="1000" placeholder="Optional notes"></textarea></label><label>Car image<input id="car-image" type="file" accept="image/jpeg,image/png,image/webp"><small>Recommended: JPG/PNG/WebP, under 6 MB.</small></label><div id="current-image" class="current-image"></div><div class="form-buttons"><button class="primary" type="submit">Save car</button><button id="delete-car" class="danger" type="button" hidden>Delete</button><button id="cancel-edit" class="ghost" type="button">Clear</button></div></form></div>
+</section></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-config.js"></script><script src="cars.js"></script><script src="admin.js"></script>
+</body></html>

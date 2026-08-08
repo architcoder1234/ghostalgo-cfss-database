@@ -1,27 +1,24 @@
-# 👻 GhostAlgo CFSS 2023 — Final Supabase Setup
+# 👻 GhostAlgo CFSS 2023 — Supabase Setup
 
 ## Supabase project
 Project ref: `cvzkpkeuykmwmhcoppvw`
 Project URL: `https://cvzkpkeuykmwmhcoppvw.supabase.co`
 
-`supabase-config.js` is already configured with the public publishable key.
+The project is configured in `supabase-config.js` with the public publishable key.
 
-## IMPORTANT SECURITY
-Never commit or paste into frontend files:
+## Important browser fix
+The website uses `supabaseClient` internally so it does not conflict with the Supabase CDN's global `supabase` variable. This fixes the Edge/Chrome console error:
+
+`Identifier 'supabase' has already been declared`
+
+The "Tracking Prevention blocked access to storage for cdn.jsdelivr.net" messages are browser privacy notices and are not the login error.
+
+## Security
+Never commit:
 - database password
 - PostgreSQL connection string containing a password
 - `service_role` key
-- any Supabase secret key
-
-The website only needs the public publishable key. RLS policies protect database writes.
-
-## Supabase CLI
-Optional:
-```bash
-supabase login
-supabase init
-supabase link --project-ref cvzkpkeuykmwmhcoppvw
-```
+- Supabase secret key
 
 ## Expected backend
 - `public.cars`
@@ -31,7 +28,7 @@ supabase link --project-ref cvzkpkeuykmwmhcoppvw
 - GhostAlgo: add/edit/delete cars and manage images
 
 ## GitHub Pages
-Upload ALL project files, including:
+Upload/replace all files in this folder, especially:
 - `index.html`
 - `admin.html`
 - `app.js`
@@ -40,4 +37,4 @@ Upload ALL project files, including:
 - `style.css`
 - `supabase-config.js`
 
-Do not omit the JavaScript files.
+After GitHub Pages redeploys, hard refresh with `Ctrl + Shift + R`.

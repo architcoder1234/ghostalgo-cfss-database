@@ -1,22 +1,22 @@
-# 👻 GhostAlgo CFSS 2023 — Supabase Setup
+# 👻 GhostAlgo CFSS 2023 — Final Supabase Setup
 
-## Project
+## Supabase project
 Project ref: `cvzkpkeuykmwmhcoppvw`
 Project URL: `https://cvzkpkeuykmwmhcoppvw.supabase.co`
 
-The website configuration is already filled in `supabase-config.js`.
+`supabase-config.js` is already configured with the public publishable key.
 
-## Security
-NEVER put these in GitHub or frontend JavaScript:
-- Database password
+## IMPORTANT SECURITY
+Never commit or paste into frontend files:
+- database password
 - PostgreSQL connection string containing a password
-- Supabase `service_role` key
-- Any Supabase secret key
+- `service_role` key
+- any Supabase secret key
 
-The PostgreSQL string you pasted contains `[YOUR-PASSWORD]` and is not needed by the website.
+The website only needs the public publishable key. RLS policies protect database writes.
 
 ## Supabase CLI
-If you want to use the CLI later:
+Optional:
 ```bash
 supabase login
 supabase init
@@ -24,15 +24,20 @@ supabase link --project-ref cvzkpkeuykmwmhcoppvw
 ```
 
 ## Expected backend
-- Table: `public.cars`
+- `public.cars`
 - Storage bucket: `car-images`
-- Auth: GhostAlgo admin account
-- Public visitors: read-only
+- GhostAlgo admin UUID: `a6a20264-3bda-4a41-9570-61548f7fb5b6`
+- Public users: read-only
+- GhostAlgo: add/edit/delete cars and manage images
 
-## Before publishing
-1. Upload these files to GitHub.
-2. Test the public car catalogue.
-3. Test GhostAlgo login.
-4. Test add/edit/delete.
-5. Test image upload.
-6. Verify an incognito visitor can view but cannot modify.
+## GitHub Pages
+Upload ALL project files, including:
+- `index.html`
+- `admin.html`
+- `app.js`
+- `admin.js`
+- `cars.js`
+- `style.css`
+- `supabase-config.js`
+
+Do not omit the JavaScript files.

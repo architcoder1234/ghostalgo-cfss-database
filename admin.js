@@ -1,7 +1,7 @@
 const CFG = window.CFSS_SUPABASE_CONFIG || {};
 const configured = CFG.url && CFG.publishableKey && !CFG.url.includes("YOUR_PROJECT_REF") && !CFG.publishableKey.includes("YOUR_SUPABASE_PUBLISHABLE_KEY");
 const supabase = configured ? window.supabase.createClient(CFG.url, CFG.publishableKey) : null;
-const ADMIN_UID = "afbaadfa-c56f-4447-96f5-40e465513c74";
+const ADMIN_UID = "a6a20264-3bda-4a41-9570-61548f7fb5b6";
 const $ = id => document.getElementById(id);
 let editing = null;
 let adminCars = [];

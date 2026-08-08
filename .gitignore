@@ -1,4 +1,4 @@
-# Do not commit local/secret Supabase files
+# Local/secret Supabase files
 .env
 .env.*
 !.env.example
